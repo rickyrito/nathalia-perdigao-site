@@ -5,110 +5,217 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nathalia Perdigão</title>
   <meta name="description" content="Nathalia Perdigão — especialista em depilação a laser e nail designer em Castelo Branco, Portugal." />
+  <link rel="icon" type="image/jpeg" href="assets/img/logos/logo-nathalia-perdigao.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
   <header class="site-header">
-    <nav class="nav container">
-      <a href="#top" class="logo">Nathalia Perdigão</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+    <div class="header-top">
+      <div class="container header-top-inner">
+        <button type="button" class="locale-trigger" id="localeTrigger" aria-label="Escolher idioma e região" data-i18n-aria="aria.locale">
+          <span class="locale-flag" id="localeFlag" aria-hidden="true">🇵🇹</span>
+          <span class="locale-sep" aria-hidden="true">|</span>
+          <span id="localeLabel">Português</span>
+        </button>
+
+        <a href="#top" class="logo">Nathalia Perdigão</a>
+
+        <button type="button" class="search-trigger" id="searchTrigger" aria-label="Pesquisar" data-i18n-aria="aria.search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span class="search-trigger-text" data-i18n="search.label">Pesquisar</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-md header-nav">
+      <div class="container">
+        <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Abrir menu" data-i18n-aria="aria.menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navCollapse">
+          <ul class="navbar-nav" id="navLinks">
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/>
+                </svg>
+                <span data-i18n="nav.sobre">Sobre</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2l1.5 5.2L18.5 9l-5 1.8L12 16l-1.5-5.2L5.5 9l5-1.8L12 2z"/>
+                </svg>
+                <span data-i18n="nav.servicos">Serviços</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#localizacao">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                <span data-i18n="nav.localizacao">Localização</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#galeria">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5-11 11"/>
+                </svg>
+                <span data-i18n="nav.galeria">Galeria</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                <span data-i18n="nav.contato">Contato</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main>
     <section id="top" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Especialista em estética</p>
-          <h1>Nathalia Perdigão</h1>
-          <p class="hero-subtitle">Depilação a laser e unhas de acrílico. Pele lisa o ano todo, em Castelo Branco.</p>
-          <div class="hero-actions">
-            <a href="#servicos" class="btn btn-primary">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M9.5 3l1.1 2.9L13.5 7l-2.9 1.1L9.5 11l-1.1-2.9L5.5 7l2.9-1.1L9.5 3zM17.5 11l1.4 3.6L22.5 16l-3.6 1.4L17.5 21l-1.4-3.6L12.5 16l3.6-1.4L17.5 11z"/>
-              </svg>
-              Ver serviços
-            </a>
-            <a href="#contato" class="btn btn-outline">
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="16" rx="2"/>
-                <line x1="16" y1="3" x2="16" y2="7"/>
-                <line x1="8" y1="3" x2="8" y2="7"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              Agendar
-            </a>
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6 order-2 order-lg-1 hero-content text-center text-lg-start">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Especialista em estética</p>
+            <h1>Nathalia Perdigão</h1>
+            <p class="hero-subtitle mx-auto mx-lg-0" data-i18n="hero.subtitle">Depilação a laser e unhas de acrílico. Pele lisa o ano todo, em Castelo Branco.</p>
+            <div class="hero-actions d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+              <a href="#servicos" class="action-btn action-btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9.5 3l1.1 2.9L13.5 7l-2.9 1.1L9.5 11l-1.1-2.9L5.5 7l2.9-1.1L9.5 3zM17.5 11l1.4 3.6L22.5 16l-3.6 1.4L17.5 21l-1.4-3.6L12.5 16l3.6-1.4L17.5 11z"/>
+                </svg>
+                <span data-i18n="hero.btnServices">Ver serviços</span>
+              </a>
+              <a href="#contato" class="action-btn action-btn-outline">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="16" rx="2"/>
+                  <line x1="16" y1="3" x2="16" y2="7"/>
+                  <line x1="8" y1="3" x2="8" y2="7"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <span data-i18n="hero.btnBook">Agendar</span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="hero-media">
-          <img src="assets/img/hero.jpg" alt="Nathalia Perdigão" />
+          <div class="col-12 col-lg-6 order-1 order-lg-2 hero-media">
+            <img src="assets/img/nathalia/nathalia-selfie-certificado.jpg" alt="Nathalia Perdigão" />
+          </div>
         </div>
       </div>
     </section>
 
     <section id="sobre" class="section">
       <div class="container">
-        <h2>Sobre</h2>
-        <p class="section-text">
-          Especialista em depilação a laser e nail designer, natural de Belo Horizonte, Brasil, e radicada
-          em Castelo Branco, Portugal. Trabalho para que cada cliente tenha pele lisa o ano todo e unhas
-          impecáveis, com técnica e cuidado em cada atendimento.
-        </p>
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/>
+          </svg>
+          <span data-i18n="sobre.title">Sobre</span>
+        </h2>
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-md-7">
+            <p class="section-text" data-i18n="sobre.text">
+              Especialista em depilação a laser e nail designer, natural de Belo Horizonte, Brasil, e radicada
+              em Castelo Branco, Portugal. Trabalho para que cada cliente tenha pele lisa o ano todo e unhas
+              impecáveis, com técnica e cuidado em cada atendimento.
+            </p>
+          </div>
+          <div class="col-12 col-md-5">
+            <img class="about-photo" src="assets/img/nathalia/nathalia-retrato-estudio.jpg" alt="Nathalia Perdigão" />
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="servicos" class="section section-alt">
       <div class="container">
-        <h2>Serviços</h2>
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2l1.5 5.2L18.5 9l-5 1.8L12 16l-1.5-5.2L5.5 9l5-1.8L12 2z"/>
+          </svg>
+          <span data-i18n="servicos.title">Serviços</span>
+        </h2>
 
-        <div class="service-block">
-          <div class="service-text">
-            <h3>Depilação a Laser</h3>
-            <p class="section-text">Pele lisa o ano todo, com tecnologia que elimina até os pelos mais escuros e grossos.</p>
+        <div class="row align-items-center g-5 service-block">
+          <div class="col-12 col-md-7 service-text">
+            <h3 data-i18n="laser.title">Depilação a Laser</h3>
+            <p class="section-text" data-i18n="laser.desc">Pele lisa o ano todo, com tecnologia que elimina até os pelos mais escuros e grossos.</p>
             <ul class="benefits-list">
-              <li>Pele lisinha e macia</li>
-              <li>Ausência de dor e sem riscos de cortes ou flacidez</li>
-              <li>Elimina pelos escuros e grossos</li>
-              <li>Ganho de tempo e ótimo custo-benefício</li>
-              <li>Evita o escurecimento das axilas e traz resultados duradouros</li>
+              <li data-i18n="laser.b1">Pele lisinha e macia</li>
+              <li data-i18n="laser.b2">Ausência de dor e sem riscos de cortes ou flacidez</li>
+              <li data-i18n="laser.b3">Elimina pelos escuros e grossos</li>
+              <li data-i18n="laser.b4">Ganho de tempo e ótimo custo-benefício</li>
+              <li data-i18n="laser.b5">Evita o escurecimento das axilas e traz resultados duradouros</li>
             </ul>
           </div>
-          <img class="service-photo" src="assets/img/laser-1.jpg" alt="Nathalia Perdigão com aparelho de depilação a laser" />
+          <div class="col-12 col-md-5">
+            <div class="service-photo-pair">
+              <img src="assets/img/nathalia/nathalia-maquina-laser.jpg" alt="Nathalia Perdigão com aparelho de depilação a laser" />
+              <img src="assets/img/laser/maquina-laser-ecra.jpg" alt="Equipamento de depilação a laser" />
+            </div>
+          </div>
         </div>
 
-        <div class="service-block reverse">
-          <div class="service-text">
-            <h3>Unhas de Acrílico / Nail Design</h3>
-            <p class="section-text">
+        <div class="row align-items-center g-5 flex-md-row-reverse service-block">
+          <div class="col-12 col-md-7 service-text">
+            <h3 data-i18n="nails.title">Unhas de Acrílico / Nail Design</h3>
+            <p class="section-text" data-i18n-html="nails.desc">
               Unhas de acrílico com acabamento profissional. Confira o trabalho no Instagram
               <a href="https://www.instagram.com/nathperdigao_naildesigner/" target="_blank" rel="noopener">@nathperdigao_naildesigner</a>.
             </p>
           </div>
-          <div class="service-photo-pair">
-            <img src="assets/img/nails-1.jpg" alt="Nathalia Perdigão, nail designer" />
-            <img src="assets/img/nails-2.jpg" alt="Unhas de acrílico com ombré colorido" />
+          <div class="col-12 col-md-5">
+            <div class="service-photo-pair">
+              <img src="assets/img/nathalia/nathalia-esmaltes.jpg" alt="Nathalia Perdigão, nail designer" />
+              <img src="assets/img/unhas/unhas-ombre-arcoiris.jpg" alt="Unhas de acrílico com ombré colorido" />
+            </div>
           </div>
         </div>
 
-        <div class="service-block service-block-solo">
-          <div class="service-text">
-            <h3>Bronzeamento em Solário</h3>
-            <p class="section-text">Protocolo em 3 sessões para uma marquinha uniforme e duradoura.</p>
+        <div class="row justify-content-center service-block service-block-solo">
+          <div class="col-12 col-lg-8 service-text">
+            <h3 data-i18n="solario.title">Bronzeamento em Solário</h3>
+            <p class="section-text" data-i18n="solario.desc">Protocolo em 3 sessões para uma marquinha uniforme e duradoura.</p>
             <ul class="benefits-list">
-              <li>1ª sessão — ativa a melanina e prepara a pele para as demais sessões</li>
-              <li>2ª sessão — realça a marquinha e corrige áreas que não bronzearam</li>
-              <li>3ª sessão — fixa a marquinha e garante durabilidade da cor por 4 semanas ou mais</li>
+              <li data-i18n="solario.b1">1ª sessão — ativa a melanina e prepara a pele para as demais sessões</li>
+              <li data-i18n="solario.b2">2ª sessão — realça a marquinha e corrige áreas que não bronzearam</li>
+              <li data-i18n="solario.b3">3ª sessão — fixa a marquinha e garante durabilidade da cor por 4 semanas ou mais</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="row align-items-center g-5 flex-md-row-reverse service-block">
+          <div class="col-12 col-md-7 service-text">
+            <h3 data-i18n="pes.title">Cuidado de Pés</h3>
+            <p class="section-text" data-i18n-html="pes.desc">
+              Tratamento de renovação da pele dos pés, em parceria com a esteticista
+              <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.
+            </p>
+          </div>
+          <div class="col-12 col-md-5">
+            <img class="service-photo" src="assets/img/pes/pes-antes-depois.jpg" alt="Antes e depois do tratamento de pés" />
           </div>
         </div>
       </div>
@@ -116,7 +223,13 @@
 
     <section id="localizacao" class="section">
       <div class="container">
-        <h2>Localização</h2>
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <span data-i18n="local.title">Localização</span>
+        </h2>
         <div class="map-embed">
           <iframe
             src="https://www.google.com/maps?q=39.8171552,-7.4854861(Rotunda+da+Ministra)&z=17&output=embed"
@@ -129,50 +242,97 @@
             title="Localização — Rotunda da Ministra, Carapalha, Castelo Branco">
           </iframe>
         </div>
-        <p class="section-text">Rotunda da Ministra, Carapalha, Castelo Branco, Portugal.</p>
+        <p class="section-text" data-i18n="local.address">Rotunda da Ministra, Carapalha, Castelo Branco, Portugal.</p>
       </div>
     </section>
 
     <section id="galeria" class="section section-alt">
       <div class="container">
-        <h2>Galeria</h2>
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5-11 11"/>
+          </svg>
+          <span data-i18n="galeria.title">Galeria</span>
+        </h2>
         <div class="gallery-carousel">
-          <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Imagem anterior">‹</button>
+          <button class="carousel-btn carousel-btn-prev" id="carouselPrev" aria-label="Imagem anterior" data-i18n-aria="aria.prev">‹</button>
           <div class="carousel-track" id="galleryTrack">
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/hero.jpg" alt="Nathalia Perdigão" />
-              <figcaption class="carousel-caption">Nathalia Perdigão</figcaption>
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-selfie-certificado.jpg" alt="Nathalia Perdigão" />
+              <figcaption class="gallery-caption" data-i18n="g1">Nathalia Perdigão</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/laser-1.jpg" alt="Depilação a laser" />
-              <figcaption class="carousel-caption">Depilação a laser</figcaption>
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-maquina-laser.jpg" alt="Depilação a laser" />
+              <figcaption class="gallery-caption" data-i18n="g2">Depilação a laser</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/nails-1.jpg" alt="Nathalia Perdigão, nail designer" />
-              <figcaption class="carousel-caption">Nathalia Perdigão, nail designer</figcaption>
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-esmaltes.jpg" alt="Nathalia Perdigão, nail designer" />
+              <figcaption class="gallery-caption" data-i18n="g3">Nathalia Perdigão, nail designer</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/nails-2.jpg" alt="Nail design colorido" />
-              <figcaption class="carousel-caption">Nail design colorido</figcaption>
+              <img class="gallery-item" src="assets/img/unhas/unhas-ombre-arcoiris.jpg" alt="Nail design colorido" />
+              <figcaption class="gallery-caption" data-i18n="g4">Nail design colorido</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/gallery-1.jpg" alt="Unhas de acrílico" />
-              <figcaption class="carousel-caption">Unhas de acrílico</figcaption>
+              <img class="gallery-item" src="assets/img/unhas/unhas-comparacao-vermelho-nude.jpg" alt="Unhas de acrílico" />
+              <figcaption class="gallery-caption" data-i18n="g5">Unhas de acrílico</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/gallery-2.jpg" alt="Nail art com glitter" />
-              <figcaption class="carousel-caption">Nail art com glitter</figcaption>
+              <img class="gallery-item" src="assets/img/unhas/unhas-glitter-laranja.jpg" alt="Nail art com glitter" />
+              <figcaption class="gallery-caption" data-i18n="g6">Nail art com glitter</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/gallery-3.jpg" alt="Nail design em azul turquesa" />
-              <figcaption class="carousel-caption">Nail design em azul turquesa</figcaption>
+              <img class="gallery-item" src="assets/img/unhas/unhas-azul-turquesa.jpg" alt="Nail design em azul turquesa" />
+              <figcaption class="gallery-caption" data-i18n="g7">Nail design em azul turquesa</figcaption>
             </figure>
             <figure class="carousel-figure">
-              <img class="carousel-item" src="assets/img/gallery-4.jpg" alt="Unhas nude com ombré" />
-              <figcaption class="carousel-caption">Unhas nude com ombré</figcaption>
+              <img class="gallery-item" src="assets/img/unhas/unhas-rosa-flores.jpg" alt="Unhas nude com ombré" />
+              <figcaption class="gallery-caption" data-i18n="g8">Unhas nude com ombré</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-blazer-telefone.jpg" alt="Nathalia Perdigão" />
+              <figcaption class="gallery-caption" data-i18n="g9">Nathalia Perdigão</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-oculos-protecao.jpg" alt="Nathalia Perdigão com equipamento de laser" />
+              <figcaption class="gallery-caption" data-i18n="g10">É mais que depilação, é liberdade</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-vermelho-floral.jpg" alt="Unhas vermelhas com detalhe floral" />
+              <figcaption class="gallery-caption" data-i18n="g11">Unhas vermelhas com detalhe floral</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-rosa-glitter.jpg" alt="Unhas rosa com glitter" />
+              <figcaption class="gallery-caption" data-i18n="g12">Unhas rosa com glitter</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/laser/laser-aplicador-luva-laranja.jpg" alt="Aplicador de depilação a laser" />
+              <figcaption class="gallery-caption" data-i18n="g13">Descubra o poder do laser</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-vermelho-escuro-glitter.jpg" alt="Unhas bordô com glitter prateado" />
+              <figcaption class="gallery-caption" data-i18n="g14">Unhas bordô com glitter prateado</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-francesinha-strass.jpg" alt="Unhas francesinha branca com strass" />
+              <figcaption class="gallery-caption" data-i18n="g15">Francesinha branca com strass</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/nathalia/nathalia-retrato-telefone.jpg" alt="Nathalia Perdigão" />
+              <figcaption class="gallery-caption" data-i18n="g16">Nathalia Perdigão</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-bordo-strass.jpg" alt="Unhas bordô com francesinha invertida" />
+              <figcaption class="gallery-caption" data-i18n="g17">Unhas bordô com francesinha invertida</figcaption>
+            </figure>
+            <figure class="carousel-figure">
+              <img class="gallery-item" src="assets/img/unhas/unhas-nude-ombre.jpg" alt="Unhas nude com ombré subtil" />
+              <figcaption class="gallery-caption" data-i18n="g18">Unhas nude com ombré subtil</figcaption>
             </figure>
           </div>
-          <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Próxima imagem">›</button>
+          <button class="carousel-btn carousel-btn-next" id="carouselNext" aria-label="Próxima imagem" data-i18n-aria="aria.next">›</button>
         </div>
         <div class="carousel-dots" id="galleryDots"></div>
       </div>
@@ -180,18 +340,34 @@
 
     <section id="contato" class="section">
       <div class="container">
-        <h2>Contato</h2>
-        <p class="section-text">Para agendamentos e dúvidas:</p>
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span data-i18n="contato.title">Contato</span>
+        </h2>
+        <p class="section-text" data-i18n="contato.text">Para agendamentos e dúvidas:</p>
         <div class="social-links">
           <a href="https://web.facebook.com/nathalia.perdigao.904" class="social-link" target="_blank" rel="noopener">
-            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/>
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="12" fill="#1877F2"/>
+              <path fill="#fff" d="M15.5 12.7h-2v7h-2.9v-7H9v-2.5h1.6V8.7c0-1.6.9-3 3.4-3h2.1v2.4h-1.5c-.4 0-.6.2-.6.7v1.4h2.2l-.35 2.5z"/>
             </svg>
             Facebook
           </a>
           <a href="https://www.instagram.com/nathperdigao_naildesigner/" class="social-link" target="_blank" rel="noopener">
-            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14c-.3.76-.5 1.64-.56 2.91C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.66.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <defs>
+                <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FFDD55"/>
+                  <stop offset="50%" stop-color="#FF543E"/>
+                  <stop offset="100%" stop-color="#C837AB"/>
+                </linearGradient>
+              </defs>
+              <rect width="24" height="24" rx="6" fill="url(#ig-gradient)"/>
+              <rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="#fff" stroke-width="1.4"/>
+              <circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.4"/>
+              <circle cx="16.4" cy="7.6" r="1" fill="#fff"/>
             </svg>
             Instagram
           </a>
@@ -202,7 +378,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Nathalia Perdigão. Todos os direitos reservados.</p>
+      <img src="assets/img/logos/logo-nathalia-perdigao.jpg" alt="Nathalia Perdigão — Depilação a Laser & Estética" class="footer-logo" />
+      <p>&copy; <span id="year"></span> Nathalia Perdigão. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+      <p class="footer-links">
+        <button type="button" class="footer-link" id="a11yTrigger" data-i18n="a11y.link">Acessibilidade</button>
+      </p>
     </div>
   </footer>
 
@@ -211,7 +391,7 @@
     class="whatsapp-float"
     target="_blank"
     rel="noopener"
-    aria-label="Contactar via WhatsApp"
+    aria-label="Contactar via WhatsApp" data-i18n-aria="aria.whatsapp"
   >
     <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true">
       <path d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16.004c0 2.548.712 4.93 1.946 6.96L2.667 29.333l6.53-1.913a13.28 13.28 0 0 0 6.807 1.86c7.364 0 13.337-5.973 13.337-13.337S23.368 2.667 16.004 2.667zm0 24.19a10.83 10.83 0 0 1-5.53-1.52l-.397-.236-3.874 1.135 1.16-3.78-.259-.39a10.83 10.83 0 0 1-1.664-5.79c0-6.005 4.887-10.892 10.893-10.892s10.892 4.887 10.892 10.892-4.886 10.581-10.892 10.581zm5.968-8.15c-.327-.164-1.935-.955-2.235-1.064-.3-.109-.518-.164-.736.164-.218.327-.845 1.064-1.036 1.282-.19.218-.382.246-.708.082-.327-.164-1.38-.509-2.628-1.62-.972-.867-1.629-1.937-1.82-2.264-.19-.327-.02-.504.144-.667.148-.147.327-.382.49-.573.164-.19.218-.327.327-.545.109-.218.055-.409-.027-.573-.082-.164-.736-1.774-1.009-2.428-.266-.64-.536-.554-.736-.564l-.627-.011c-.218 0-.573.082-.873.409-.3.327-1.145 1.118-1.145 2.727 0 1.609 1.173 3.164 1.336 3.382.164.218 2.31 3.527 5.6 4.945.782.338 1.393.54 1.869.69.785.25 1.5.215 2.065.13.63-.094 1.935-.79 2.208-1.554.273-.764.273-1.418.191-1.554-.082-.137-.3-.218-.627-.382z"/>
@@ -219,15 +399,134 @@
   </a>
 
   <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar imagem">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Imagem anterior">‹</button>
-    <div class="lightbox-content">
-      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-      <p class="lightbox-caption" id="lightboxCaption"></p>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxHeading">
+      <div class="lightbox-head">
+        <h2 id="lightboxHeading" data-i18n="galeria.title">Galeria</h2>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar imagem" data-i18n-aria="aria.close">&times;</button>
+      </div>
+
+      <div class="lightbox-thumbs-row">
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Imagem anterior" data-i18n-aria="aria.prev">‹</button>
+        <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima imagem" data-i18n-aria="aria.next">›</button>
+      </div>
+
+      <div class="lightbox-body">
+        <div class="lightbox-stage">
+          <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        </div>
+        <div class="lightbox-info">
+          <p class="lightbox-counter" id="lightboxCounter"></p>
+          <h3 class="lightbox-caption" id="lightboxCaption"></h3>
+          <a href="#contato" class="action-btn action-btn-primary lightbox-cta" id="lightboxCta">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <line x1="16" y1="3" x2="16" y2="7"/>
+              <line x1="8" y1="3" x2="8" y2="7"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span data-i18n="hero.btnBook">Agendar</span>
+          </a>
+        </div>
+      </div>
     </div>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima imagem">›</button>
   </div>
 
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Pesquisar">
+      <div class="search-bar">
+        <svg class="search-bar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="search" id="searchInput" autocomplete="off"
+               aria-label="Pesquisar no site" data-i18n-aria="search.placeholder"
+               placeholder="Pesquisar no site…" data-i18n-placeholder="search.placeholder" />
+        <button type="button" class="search-close" id="searchClose" aria-label="Fechar" data-i18n-aria="aria.close">&times;</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <div class="locale-modal a11y-modal" id="a11yModal">
+    <div class="locale-dialog a11y-dialog" role="dialog" aria-modal="true" aria-labelledby="a11yTitle">
+      <div class="locale-dialog-head">
+        <h2 id="a11yTitle" data-i18n="a11y.title">Declaração de Acessibilidade</h2>
+        <button type="button" class="locale-close" id="a11yClose" aria-label="Fechar" data-i18n-aria="aria.close">&times;</button>
+      </div>
+      <div class="locale-dialog-body a11y-body">
+        <p class="a11y-intro" data-i18n="a11y.intro">Este site foi desenvolvido tendo como referência as diretrizes WCAG 2.1, nível AA.</p>
+
+        <h3 data-i18n="a11y.measuresTitle">Medidas aplicadas</h3>
+        <ul class="a11y-list">
+          <li data-i18n="a11y.m1">Contrastes de cor verificados segundo a fórmula WCAG.</li>
+          <li data-i18n="a11y.m2">Navegação completa por teclado, com indicador de foco visível.</li>
+          <li data-i18n="a11y.m3">Texto alternativo em todas as imagens.</li>
+          <li data-i18n="a11y.m4">Estrutura semântica, com títulos hierarquizados.</li>
+          <li data-i18n="a11y.m5">Respeito pela preferência por movimento reduzido.</li>
+          <li data-i18n="a11y.m6">Conteúdo disponível em português, francês e inglês.</li>
+        </ul>
+
+        <h3 data-i18n="a11y.limitsTitle">Limitações conhecidas</h3>
+        <ul class="a11y-list a11y-list-limits">
+          <li data-i18n="a11y.l1">A verificação foi sobretudo automática.</li>
+          <li data-i18n="a11y.l2">O mapa é um serviço externo do Google Maps.</li>
+          <li data-i18n="a11y.l3">Algumas descrições de fotografias são sucintas.</li>
+        </ul>
+
+        <h3 data-i18n="a11y.contactTitle">Encontrou alguma barreira?</h3>
+        <p data-i18n="a11y.contactText">Se tiver dificuldade em usar alguma parte deste site, diga-nos.</p>
+        <a href="https://wa.me/351919872094" class="action-btn action-btn-primary a11y-cta" target="_blank" rel="noopener" data-i18n="a11y.contactCta">Falar por WhatsApp</a>
+
+        <p class="a11y-updated" data-i18n="a11y.updated">Última atualização: agosto de 2026.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="locale-modal" id="localeModal">
+    <div class="locale-dialog" role="dialog" aria-modal="true" aria-labelledby="localeTitle">
+      <div class="locale-dialog-head">
+        <h2 id="localeTitle" data-i18n="modal.title">Idioma e região</h2>
+        <button type="button" class="locale-close" id="localeClose" aria-label="Fechar" data-i18n-aria="aria.close">&times;</button>
+      </div>
+      <div class="locale-dialog-body">
+        <p class="locale-desc" data-i18n="modal.desc">O conteúdo do site será apresentado no idioma escolhido.</p>
+
+        <div class="locale-field">
+          <label for="localeCountry" data-i18n="modal.location">Região</label>
+          <select id="localeCountry">
+            <option value="pt">Portugal</option>
+            <option value="fr">França</option>
+            <option value="br">Brasil</option>
+            <option value="uk">Reino Unido</option>
+            <option value="other">Outro</option>
+          </select>
+          <svg class="locale-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+
+        <div class="locale-field">
+          <label for="localeLanguage" data-i18n="modal.language">Idioma</label>
+          <select id="localeLanguage">
+            <option value="pt">Português</option>
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+          </select>
+          <svg class="locale-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+
+        <button type="button" class="locale-save" id="localeSave" data-i18n="modal.save">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/a11y.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/search.js"></script>
 </body>
 </html>
