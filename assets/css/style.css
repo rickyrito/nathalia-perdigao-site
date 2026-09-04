@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #fffbf4;
+  --color-bg: #fefefe;
   --color-bg-alt: #f4ebdd;
   --color-blush: #f9e2e7;
   --color-text: #232323;
@@ -72,7 +72,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 251, 244, 0.96);
+  background: rgba(254, 254, 254, 0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
 }
