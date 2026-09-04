@@ -275,15 +275,10 @@ a {
   outline-offset: 3px;
 }
 
-/* O campo de pesquisa recebe foco assim que o painel abre, e a caixa de foco à
-   volta dele ficava pesada. O foco passa a marcar-se na linha do painel. */
+/* O campo de pesquisa recebe foco assim que o painel abre; sem marca de foco,
+   por decisão de desenho. O cursor no campo é que assinala onde se está. */
 .search-bar input:focus-visible {
   outline: none;
-}
-
-.search-bar:has(input:focus-visible) {
-  border-bottom-color: var(--color-accent);
-  box-shadow: inset 0 -1px 0 var(--color-accent);
 }
 
 /* Respeitar quem prefere menos movimento */
