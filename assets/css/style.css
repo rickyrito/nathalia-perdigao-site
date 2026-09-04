@@ -11,7 +11,7 @@
   --color-gold: #d4b073;
   --color-border: #e0dad5;
   --color-footer-bg: #fefefe;   /* igual ao fundo da imagem do logo */
-  --header-offset: 144px;       /* altura do header sticky + folga */
+  --header-offset: 64px;        /* header (128) + folga (24) - padding da secção (88) */
   --max-width: 1180px;
   --radius: 0px;
   --font-heading: "Playfair Display", Georgia, serif;
@@ -32,13 +32,13 @@ html {
 
 @media (min-width: 768px) {
   :root {
-    --header-offset: 160px;
+    --header-offset: 78px;
   }
 }
 
 @media (min-width: 992px) {
   :root {
-    --header-offset: 164px;
+    --header-offset: 82px;
   }
 }
 
