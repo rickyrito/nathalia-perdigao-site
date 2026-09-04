@@ -511,10 +511,6 @@ a {
   margin-top: 64px;
 }
 
-.service-block-solo .service-text {
-  max-width: 640px;
-}
-
 .service-photo {
   width: 100%;
   aspect-ratio: 4 / 3;
