@@ -309,7 +309,8 @@ a {
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, var(--color-blush) 0%, var(--color-bg) 70%);
+  /* mesmo laranja das faixas alternadas, a esbater para o fundo branco */
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 70%);
 }
 
 .hero .container {
