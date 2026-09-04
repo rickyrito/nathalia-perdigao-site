@@ -696,7 +696,15 @@ a {
 .site-footer {
   padding: 56px 0;
   text-align: center;
-  background: var(--color-footer-bg);
+  /* Mantém-se branco sólido até aos 68%, onde o logo assenta: a imagem tem fundo
+     #fefefe e sobre qualquer outro tom voltaria a ler-se como um retângulo. Só
+     abaixo do logo esbate para o laranja das faixas. */
+  background: linear-gradient(
+    180deg,
+    var(--color-footer-bg) 0%,
+    var(--color-footer-bg) 68%,
+    var(--color-bg-alt) 100%
+  );
   color: var(--color-text-muted);
   font-size: 0.75rem;
   font-weight: 400;
