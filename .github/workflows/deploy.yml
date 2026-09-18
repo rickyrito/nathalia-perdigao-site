@@ -1,0 +1,33 @@
+name: Deploy por FTP
+
+on:
+  push:
+    branches: [ main ]   # muda para "master" se for esse o nome do teu branch
+  workflow_dispatch:      # permite lançar o deploy à mão no separador Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v6
+
+      - name: Enviar por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}        # ftp.nathperdigao.pt
+          username: ${{ secrets.FTP_USERNAME }}    # gestao@nathperdigao.pt
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps        # FTPS explícito na porta 21
+          port: 21
+
+          local-dir: ./         # tudo o que está no repositório
+          server-dir: ./        # a conta gestao@ aterra já dentro do public_html
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/README.md
+            **/.github/**
+
