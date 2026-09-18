@@ -45,7 +45,7 @@ const TRANSLATIONS = {
     "pes.desc": 'Tratamento de renovação da pele dos pés, em parceria com a esteticista <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
     "local.title": "Localização",
-    "local.address": "Rotunda da Ministra, Carapalha, Castelo Branco, Portugal.",
+    "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Galeria",
     "g1": "Nathalia Perdigão",
@@ -177,7 +177,7 @@ const TRANSLATIONS = {
     "pes.desc": 'Foot skin renewal treatment, in partnership with beautician <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
     "local.title": "Location",
-    "local.address": "Rotunda da Ministra, Carapalha, Castelo Branco, Portugal.",
+    "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Gallery",
     "g1": "Nathalia Perdigão",
@@ -309,7 +309,7 @@ const TRANSLATIONS = {
     "pes.desc": 'Traitement de renouvellement de la peau des pieds, en partenariat avec l\'esthéticienne <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
     "local.title": "Localisation",
-    "local.address": "Rotunda da Ministra, Carapalha, Castelo Branco, Portugal.",
+    "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Galerie",
     "g1": "Nathalia Perdigão",
