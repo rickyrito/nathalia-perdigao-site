@@ -2,15 +2,6 @@
 <html lang="pt-BR"> 
 <head>
   <meta charset="UTF-8" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G4430EXKC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-9G4430EXKC');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nathalia Perdigão</title>
   <meta name="description" content="Nathalia Perdigão — especialista em depilação a laser e nail designer em Castelo Branco, Portugal." />
@@ -433,6 +424,7 @@
       <p>&copy; <span id="year"></span> Nathalia Perdigão. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
       <p class="footer-links">
         <button type="button" class="footer-link" id="a11yTrigger" data-i18n="a11y.link">Acessibilidade</button>
+        <button type="button" class="footer-link" id="cookieSettings" data-i18n="cookies.link">Cookies</button>
       </p>
     </div>
   </footer>
@@ -574,10 +566,24 @@
     </div>
   </div>
 
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-labelledby="cookieTitle" hidden>
+    <div class="container cookie-banner-inner">
+      <div class="cookie-text">
+        <p class="cookie-title" id="cookieTitle" data-i18n="cookies.title">Cookies</p>
+        <p data-i18n="cookies.text">Usamos o Google Analytics para perceber como o site é visitado. Só é ativado se aceitar.</p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="action-btn action-btn-outline" id="cookieReject" data-i18n="cookies.reject">Recusar</button>
+        <button type="button" class="action-btn action-btn-primary" id="cookieAccept" data-i18n="cookies.accept">Aceitar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/a11y.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/search.js"></script>
+  <script src="assets/js/consent.js"></script>
 </body>
 </html>

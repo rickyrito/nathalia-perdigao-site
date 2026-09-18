@@ -1283,6 +1283,9 @@ a {
 /* Declaração de acessibilidade */
 .footer-links {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 }
 
 .footer-link {
@@ -1395,4 +1398,69 @@ a {
 
 .whatsapp-float:hover {
   transform: scale(1.08);
+}
+
+/* Aviso de cookies: fica acima do botão de WhatsApp (200) e abaixo dos
+   diálogos (1000+). Enquanto está visível, o WhatsApp sobe para não o tapar. */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -10px 30px rgba(35, 35, 35, 0.08);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cookie-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.cookie-text p:last-child {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+/* recusar e aceitar com o mesmo tamanho: recusar não pode ser mais difícil */
+.cookie-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-actions .action-btn {
+  padding: 13px 28px;
+  cursor: pointer;
+}
+
+.has-cookie-banner .whatsapp-float {
+  bottom: calc(var(--cookie-banner-h, 0px) + 24px);
+}
+
+@media (max-width: 767.98px) {
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
 }

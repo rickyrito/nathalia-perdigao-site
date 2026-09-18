@@ -80,6 +80,12 @@ const TRANSLATIONS = {
 
     "footer.rights": "Todos os direitos reservados.",
 
+    "cookies.title": "Cookies",
+    "cookies.text": "Usamos o Google Analytics para perceber como o site é visitado. Só é ativado se aceitar.",
+    "cookies.accept": "Aceitar",
+    "cookies.reject": "Recusar",
+    "cookies.link": "Cookies",
+
     "aria.menu": "Abrir menu",
     "aria.prev": "Imagem anterior",
     "aria.next": "Próxima imagem",
@@ -205,6 +211,12 @@ const TRANSLATIONS = {
 
     "footer.rights": "All rights reserved.",
 
+    "cookies.title": "Cookies",
+    "cookies.text": "We use Google Analytics to understand how the site is visited. It only runs if you accept.",
+    "cookies.accept": "Accept",
+    "cookies.reject": "Decline",
+    "cookies.link": "Cookies",
+
     "aria.menu": "Open menu",
     "aria.prev": "Previous image",
     "aria.next": "Next image",
@@ -329,6 +341,12 @@ const TRANSLATIONS = {
     "contato.text": "Pour les rendez-vous et les questions :",
 
     "footer.rights": "Tous droits réservés.",
+
+    "cookies.title": "Cookies",
+    "cookies.text": "Nous utilisons Google Analytics pour comprendre comment le site est consulté. Il n'est activé que si vous acceptez.",
+    "cookies.accept": "Accepter",
+    "cookies.reject": "Refuser",
+    "cookies.link": "Cookies",
 
     "aria.menu": "Ouvrir le menu",
     "aria.prev": "Image précédente",
