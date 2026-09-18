@@ -1,9 +1,9 @@
 name: Deploy por FTP
 
+# Sem gatilho automático: este workflow só corre quando o lanças à mão,
+# no separador Actions -> "Deploy por FTP" -> botão "Run workflow".
 on:
-  push:
-    branches: [ main ]   # muda para "master" se for esse o nome do teu branch
-  workflow_dispatch:      # permite lançar o deploy à mão no separador Actions
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -30,4 +30,3 @@ jobs:
             **/node_modules/**
             **/README.md
             **/.github/**
-
