@@ -4,8 +4,9 @@
 
 const TRANSLATIONS = {
   pt: {
-    "html.lang": "pt-BR",
-    "meta.description": "Nathalia Perdigão — especialista em depilação a laser e nail designer em Castelo Branco, Portugal.",
+    "html.lang": "pt-PT",
+    "title": "Nathalia Perdigão | Depilação a Laser e Unhas em Castelo Branco",
+    "meta.description": "Depilação a laser, unhas de acrílico e bronzeamento em solário em Castelo Branco. Marque a sua sessão com a Nathalia Perdigão pelo WhatsApp.",
 
     "nav.sobre": "Sobre",
     "nav.servicos": "Serviços",
@@ -136,7 +137,8 @@ const TRANSLATIONS = {
 
   en: {
     "html.lang": "en",
-    "meta.description": "Nathalia Perdigão — laser hair removal specialist and nail designer in Castelo Branco, Portugal.",
+    "title": "Nathalia Perdigão | Laser Hair Removal & Nails in Castelo Branco",
+    "meta.description": "Laser hair removal, acrylic nails and solarium tanning in Castelo Branco, Portugal. Book your session with Nathalia Perdigão on WhatsApp.",
 
     "nav.sobre": "About",
     "nav.servicos": "Services",
@@ -267,7 +269,8 @@ const TRANSLATIONS = {
 
   fr: {
     "html.lang": "fr",
-    "meta.description": "Nathalia Perdigão — spécialiste en épilation laser et nail designer à Castelo Branco, Portugal.",
+    "title": "Nathalia Perdigão | Épilation Laser et Ongles à Castelo Branco",
+    "meta.description": "Épilation laser, ongles en gel-acrylique et bronzage en solarium à Castelo Branco, Portugal. Réservez votre séance avec Nathalia Perdigão sur WhatsApp.",
 
     "nav.sobre": "À propos",
     "nav.servicos": "Services",
@@ -429,8 +432,22 @@ function applyLocale(locale) {
 
   document.documentElement.lang = t["html.lang"];
 
+  if (t["title"]) document.title = t["title"];
+
   const meta = document.querySelector('meta[name="description"]');
   if (meta) meta.setAttribute("content", t["meta.description"]);
+
+  // Open Graph e Twitter Card seguem o mesmo texto: evita que a pré-visualização
+  // ao partilhar o link fique dessincronizada do idioma escolhido.
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle && t["title"]) ogTitle.setAttribute("content", t["title"]);
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twitterTitle && t["title"]) twitterTitle.setAttribute("content", t["title"]);
+
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute("content", t["meta.description"]);
+  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twitterDesc) twitterDesc.setAttribute("content", t["meta.description"]);
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const value = t[el.dataset.i18n];
