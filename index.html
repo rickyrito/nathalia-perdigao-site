@@ -115,15 +115,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#localizacao">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
-                <span data-i18n="nav.localizacao">Localização</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#galeria">
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -131,6 +122,15 @@
                   <path d="M21 15l-5-5-11 11"/>
                 </svg>
                 <span data-i18n="nav.galeria">Galeria</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#localizacao">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
+                  <circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                <span data-i18n="nav.localizacao">Localização</span>
               </a>
             </li>
             <li class="nav-item">
@@ -282,32 +282,7 @@
       </div>
     </section>
 
-    <section id="localizacao" class="section">
-      <div class="container">
-        <h2>
-          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
-            <circle cx="12" cy="9" r="2.5"/>
-          </svg>
-          <span data-i18n="local.title">Localização</span>
-        </h2>
-        <div class="map-embed">
-          <iframe
-            src="https://www.google.com/maps?q=Rua+Dr.+Simpl%C3%ADcio+Magro,+lote+107,+6000-332+Castelo+Branco&z=17&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localização — Rua Dr. Simplício Magro, lote 107, Castelo Branco">
-          </iframe>
-        </div>
-        <p class="section-text" data-i18n="local.address">Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.</p>
-      </div>
-    </section>
-
-    <section id="galeria" class="section section-alt">
+    <section id="galeria" class="section">
       <div class="container">
         <h2>
           <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -435,6 +410,31 @@
       </div>
     </section>
 
+    <section id="localizacao" class="section section-alt">
+      <div class="container">
+        <h2>
+          <svg class="h2-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+          <span data-i18n="local.title">Localização</span>
+        </h2>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Rua+Dr.+Simpl%C3%ADcio+Magro,+lote+107,+6000-332+Castelo+Branco&z=17&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização — Rua Dr. Simplício Magro, lote 107, Castelo Branco">
+          </iframe>
+        </div>
+        <p class="section-text" data-i18n="local.address">Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.</p>
+      </div>
+    </section>
+
     <section id="contato" class="section">
       <div class="container">
         <h2>
@@ -444,6 +444,10 @@
           <span data-i18n="contato.title">Contato</span>
         </h2>
         <p class="section-text" data-i18n="contato.text">Para agendamentos e dúvidas:</p>
+        <p class="section-text">
+          <a href="tel:+351919872094" data-i18n="contato.phone">+351 919 872 094</a>
+        </p>
+        <p class="section-text" data-i18n="contato.address">Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.</p>
         <div class="social-links">
           <a href="https://web.facebook.com/nathalia.perdigao.904" class="social-link" target="_blank" rel="noopener">
             <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
