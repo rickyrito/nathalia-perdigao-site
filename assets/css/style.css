@@ -412,11 +412,6 @@ a {
   align-items: flex-start;
 }
 
-#contato {
-  min-height: 50vh;
-  min-height: 50dvh;
-}
-
 .section .container {
   width: 100%;
 }
