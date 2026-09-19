@@ -10,9 +10,8 @@ const TRANSLATIONS = {
 
     "nav.sobre": "Sobre",
     "nav.servicos": "Serviços",
-    "nav.localizacao": "Localização",
     "nav.galeria": "Galeria",
-    "nav.contato": "Contato",
+    "nav.ondeEstamos": "Onde estamos",
 
     "hero.eyebrow": "Especialista em estética",
     "hero.subtitle": "Depilação a laser e unhas de acrílico. Pele lisa o ano todo, em Castelo Branco.",
@@ -44,7 +43,7 @@ const TRANSLATIONS = {
     "pes.title": "Cuidado de Pés",
     "pes.desc": 'Tratamento de renovação da pele dos pés, em parceria com a esteticista <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
-    "local.title": "Localização",
+    "ondeEstamos.title": "Onde estamos",
     "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Galeria",
@@ -76,10 +75,8 @@ const TRANSLATIONS = {
     "g26": "Bordado Nath Bronze",
     "g27": "A sala do solário",
 
-    "contato.title": "Contato",
     "contato.text": "Para agendamentos e dúvidas:",
     "contato.phone": "+351 919 872 094",
-    "contato.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "footer.rights": "Todos os direitos reservados.",
 
@@ -176,9 +173,8 @@ const TRANSLATIONS = {
 
     "nav.sobre": "About",
     "nav.servicos": "Services",
-    "nav.localizacao": "Location",
     "nav.galeria": "Gallery",
-    "nav.contato": "Contact",
+    "nav.ondeEstamos": "Where we are",
 
     "hero.eyebrow": "Beauty & aesthetics specialist",
     "hero.subtitle": "Laser hair removal and acrylic nails. Smooth skin all year round, in Castelo Branco.",
@@ -210,7 +206,7 @@ const TRANSLATIONS = {
     "pes.title": "Foot Care",
     "pes.desc": 'Foot skin renewal treatment, in partnership with beautician <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
-    "local.title": "Location",
+    "ondeEstamos.title": "Where we are",
     "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Gallery",
@@ -242,10 +238,8 @@ const TRANSLATIONS = {
     "g26": "Nath Bronze embroidery",
     "g27": "The solarium room",
 
-    "contato.title": "Contact",
     "contato.text": "For bookings and enquiries:",
     "contato.phone": "+351 919 872 094",
-    "contato.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "footer.rights": "All rights reserved.",
 
@@ -342,9 +336,8 @@ const TRANSLATIONS = {
 
     "nav.sobre": "À propos",
     "nav.servicos": "Services",
-    "nav.localizacao": "Localisation",
     "nav.galeria": "Galerie",
-    "nav.contato": "Contact",
+    "nav.ondeEstamos": "Où nous trouver",
 
     "hero.eyebrow": "Spécialiste en esthétique",
     "hero.subtitle": "Épilation laser et ongles en acrylique. Une peau douce toute l'année, à Castelo Branco.",
@@ -376,7 +369,7 @@ const TRANSLATIONS = {
     "pes.title": "Soin des Pieds",
     "pes.desc": 'Traitement de renouvellement de la peau des pieds, en partenariat avec l\'esthéticienne <a href="https://www.instagram.com/ofelialopesbeauty/" target="_blank" rel="noopener">@ofelialopesbeauty</a>.',
 
-    "local.title": "Localisation",
+    "ondeEstamos.title": "Où nous trouver",
     "local.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "galeria.title": "Galerie",
@@ -408,10 +401,8 @@ const TRANSLATIONS = {
     "g26": "Broderie Nath Bronze",
     "g27": "La salle du solarium",
 
-    "contato.title": "Contact",
     "contato.text": "Pour les rendez-vous et les questions :",
     "contato.phone": "+351 919 872 094",
-    "contato.address": "Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.",
 
     "footer.rights": "Tous droits réservés.",
 
