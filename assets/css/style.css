@@ -760,7 +760,7 @@ a {
 .footer-logo {
   display: block;
   flex-shrink: 0;
-  width: 130px;
+  width: 200px;
   height: auto;
   margin: 0;
 }
