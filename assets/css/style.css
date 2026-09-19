@@ -28,6 +28,9 @@ html {
   scroll-behavior: smooth;
   /* o header é sticky: afasta o destino das âncoras para o título não ficar tapado */
   scroll-padding-top: var(--header-offset);
+  /* "proximity", não "mandatory": a secção de Serviços é mais alta que um ecrã,
+     e o mandatory prenderia o scroll a meio dela em vez de deixar ler à vontade */
+  scroll-snap-type: y proximity;
 }
 
 @media (min-width: 768px) {
@@ -285,6 +288,7 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 
   *,
@@ -309,6 +313,7 @@ a {
   min-height: 100dvh;
   display: flex;
   align-items: center;
+  scroll-snap-align: start;
   /* mesmo laranja das faixas alternadas, a esbater para o fundo branco */
   background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 70%);
 }
@@ -410,10 +415,23 @@ a {
   min-height: 100dvh;
   display: flex;
   align-items: flex-start;
+  scroll-snap-align: start;
 }
 
 .section .container {
   width: 100%;
+}
+
+/* Aparecem com um leve fade + deslize ao entrar no ecrã; ver assets/js/reveal.js */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-alt {
