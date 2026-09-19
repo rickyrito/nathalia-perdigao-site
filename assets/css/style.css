@@ -775,27 +775,6 @@ a {
   line-height: 1.4;
 }
 
-.footer-address {
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: none;
-}
-
-.footer-phone {
-  margin-top: 3px;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: none;
-}
-
-.footer-phone a {
-  color: inherit;
-}
-
-.footer-phone a:hover {
-  color: var(--color-accent);
-}
-
 .footer-social {
   display: flex;
   justify-content: flex-start;
