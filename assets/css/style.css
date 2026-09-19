@@ -721,7 +721,7 @@ a {
 
 /* Footer */
 .site-footer {
-  padding: 56px 0;
+  padding: 32px 0;
   text-align: center;
   /* Mantém-se branco sólido até aos 68%, onde o logo assenta: a imagem tem fundo
      #fefefe e sobre qualquer outro tom voltaria a ler-se como um retângulo. Só
@@ -745,7 +745,36 @@ a {
   max-width: 220px;
   width: 100%;
   height: auto;
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
+}
+
+.footer-address {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--color-accent);
+}
+
+.footer-social-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Lightbox */
