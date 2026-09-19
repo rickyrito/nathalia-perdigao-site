@@ -751,7 +751,7 @@ a {
 .footer-logo {
   display: block;
   flex-shrink: 0;
-  width: 88px;
+  width: 130px;
   height: auto;
   margin: 0;
 }
@@ -762,24 +762,18 @@ a {
   align-items: flex-start;
 }
 
-.footer-name {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text);
+.footer-info p {
+  line-height: 1.4;
 }
 
 .footer-address {
-  margin-top: 6px;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: none;
 }
 
 .footer-phone {
-  margin-top: 4px;
+  margin-top: 3px;
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: none;
@@ -816,7 +810,7 @@ a {
 }
 
 .footer-copyright {
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 @media (max-width: 767.98px) {
@@ -1399,7 +1393,7 @@ a {
 
 /* Declaração de acessibilidade */
 .footer-links {
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
   justify-content: flex-start;
   gap: 24px;
