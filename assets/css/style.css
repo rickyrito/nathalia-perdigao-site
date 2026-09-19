@@ -518,6 +518,7 @@ a {
 
 /* Location */
 .map-embed {
+  position: relative;
   margin-top: 8px;
   margin-bottom: 24px;
   width: 100%;
@@ -525,6 +526,27 @@ a {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 14px 32px rgba(35, 35, 35, 0.08);
+}
+
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background: var(--color-bg-alt);
+}
+
+.map-placeholder p {
+  max-width: 380px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 /* Services */
@@ -1405,67 +1427,189 @@ a {
   transform: scale(1.08);
 }
 
-/* Aviso de cookies: fica acima do botão de WhatsApp (200) e abaixo dos
-   diálogos (1000+). Enquanto está visível, o WhatsApp sobe para não o tapar. */
-.cookie-banner {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 300;
-  background: var(--color-bg);
+/* Consentimento de cookies: diálogo bloqueante, com fundo esbatido cobrindo
+   o site inteiro (incl. o botão de WhatsApp) até haver uma decisão. */
+.cookie-modal {
+  z-index: 1300;
+}
+
+.cookie-dialog {
+  max-width: 520px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cookie-body {
+  overflow-y: auto;
+  text-align: left;
+}
+
+.cookie-intro {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cookie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  padding: 13px 16px;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.cookie-btn-outline {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.cookie-btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.cookie-btn-primary {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.cookie-btn-primary:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.cookie-category {
+  padding: 16px 0;
   border-top: 1px solid var(--color-border);
-  box-shadow: 0 -10px 30px rgba(35, 35, 35, 0.08);
 }
 
-.cookie-banner[hidden] {
-  display: none;
-}
-
-.cookie-banner-inner {
+.cookie-category-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 8px;
 }
 
-.cookie-title {
+.cookie-category-head h3 {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   color: var(--color-text);
-  margin-bottom: 4px;
 }
 
-.cookie-text p:last-child {
+.cookie-always-on {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-rose-ink);
+  white-space: nowrap;
+}
+
+.cookie-category p {
   color: var(--color-text-muted);
-  font-size: 0.92rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
-/* recusar e aceitar com o mesmo tamanho: recusar não pode ser mais difícil */
-.cookie-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.cookie-toggle {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
   flex-shrink: 0;
 }
 
-.cookie-actions .action-btn {
-  padding: 13px 28px;
+.cookie-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   cursor: pointer;
 }
 
-.has-cookie-banner .whatsapp-float {
-  bottom: calc(var(--cookie-banner-h, 0px) + 24px);
+.cookie-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--color-border);
+  border-radius: 999px;
+  transition: background 0.2s ease;
+  pointer-events: none;
 }
 
-@media (max-width: 767.98px) {
-  .cookie-banner-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
+.cookie-toggle-track::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(35, 35, 35, 0.3);
+}
+
+.cookie-toggle input:checked ~ .cookie-toggle-track {
+  background: var(--color-accent);
+}
+
+.cookie-toggle input:checked ~ .cookie-toggle-track::before {
+  transform: translateX(18px);
+}
+
+.cookie-toggle input:focus-visible ~ .cookie-toggle-track {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.cookie-save {
+  width: 100%;
+  margin-top: 18px;
+  padding: 17px;
+  border: none;
+  border-radius: 0;
+  background: #f4c6cf;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.cookie-save:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.cookie-readmore {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.78rem;
 }

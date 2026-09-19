@@ -419,9 +419,10 @@
           </svg>
           <span data-i18n="local.title">Localização</span>
         </h2>
-        <div class="map-embed">
+        <div class="map-embed" id="mapEmbed">
           <iframe
-            src="https://www.google.com/maps?q=Rua+Dr.+Simpl%C3%ADcio+Magro,+lote+107,+6000-332+Castelo+Branco&z=17&output=embed"
+            id="mapFrame"
+            data-src="https://www.google.com/maps?q=Rua+Dr.+Simpl%C3%ADcio+Magro,+lote+107,+6000-332+Castelo+Branco&z=17&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
@@ -430,6 +431,10 @@
             referrerpolicy="no-referrer-when-downgrade"
             title="Localização — Rua Dr. Simplício Magro, lote 107, Castelo Branco">
           </iframe>
+          <div class="map-placeholder" id="mapPlaceholder">
+            <p data-i18n="cookies.mapPlaceholder">O mapa está bloqueado até autorizar a categoria "Mapa" nas preferências de cookies.</p>
+            <button type="button" class="action-btn action-btn-outline" id="mapEnableBtn" data-i18n="cookies.mapEnable">Ativar mapa</button>
+          </div>
         </div>
         <p class="section-text" data-i18n="local.address">Rua Dr. Simplício Magro, lote 107, 6000-332 Castelo Branco, Portugal.</p>
       </div>
@@ -625,15 +630,97 @@
     </div>
   </div>
 
-  <div class="cookie-banner" id="cookieBanner" role="region" aria-labelledby="cookieTitle" hidden>
-    <div class="container cookie-banner-inner">
-      <div class="cookie-text">
-        <p class="cookie-title" id="cookieTitle" data-i18n="cookies.title">Cookies</p>
-        <p data-i18n="cookies.text">Usamos o Google Analytics para perceber como o site é visitado. Só é ativado se aceitar.</p>
+  <div class="locale-modal cookie-modal" id="cookieModal">
+    <div class="locale-dialog cookie-dialog" role="dialog" aria-modal="true" aria-labelledby="cookieTitle">
+      <div class="locale-dialog-head">
+        <h2 id="cookieTitle" data-i18n="cookies.title">As suas escolhas de privacidade</h2>
+        <button type="button" class="locale-close" id="cookieClose" aria-label="Fechar" data-i18n-aria="aria.close">&times;</button>
       </div>
-      <div class="cookie-actions">
-        <button type="button" class="action-btn action-btn-outline" id="cookieReject" data-i18n="cookies.reject">Recusar</button>
-        <button type="button" class="action-btn action-btn-primary" id="cookieAccept" data-i18n="cookies.accept">Aceitar</button>
+      <div class="locale-dialog-body cookie-body">
+        <p class="cookie-intro" data-i18n="cookies.intro">Pode decidir o que autoriza. A sua escolha fica guardada neste dispositivo e pode alterá-la a qualquer momento pelo link "Cookies", no rodapé.</p>
+
+        <div class="cookie-actions">
+          <button type="button" class="cookie-btn cookie-btn-outline" id="cookieRejectAll" data-i18n="cookies.rejectAll">✕ Rejeitar tudo</button>
+          <button type="button" class="cookie-btn cookie-btn-primary" id="cookieAcceptAll" data-i18n="cookies.acceptAll">✓ Aceitar tudo</button>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-head">
+            <h3 data-i18n="cookies.necessaryTitle">Necessárias</h3>
+            <span class="cookie-always-on" data-i18n="cookies.alwaysActive">Sempre ativas</span>
+          </div>
+          <p data-i18n="cookies.necessaryText">Guardam no seu navegador o idioma que escolheu e a sua decisão sobre cookies. Não saem do seu dispositivo nem identificam quem é.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-head">
+            <h3 data-i18n="cookies.mapsTitle">Mapa</h3>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieToggleMaps" aria-label="Mapa" data-i18n-aria="cookies.mapsTitle">
+              <span class="cookie-toggle-track" aria-hidden="true"></span>
+            </label>
+          </div>
+          <p data-i18n="cookies.mapsText">Mostra a localização do espaço. É carregado a partir do Google Maps, que recebe o seu endereço IP e pode colocar cookies. Sem autorização, o mapa não é carregado.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-head">
+            <h3 data-i18n="cookies.analyticsTitle">Analytics</h3>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieToggleAnalytics" aria-label="Analytics" data-i18n-aria="cookies.analyticsTitle">
+              <span class="cookie-toggle-track" aria-hidden="true"></span>
+            </label>
+          </div>
+          <p data-i18n="cookies.analyticsText">Google Analytics, para perceber como o site é visitado e onde melhorar. Só é ativado se autorizar esta categoria.</p>
+        </div>
+
+        <button type="button" class="cookie-save" id="cookieSave" data-i18n="cookies.save">Guardar e continuar</button>
+        <a href="#" class="cookie-readmore" id="cookiePolicyLink" data-i18n="cookies.readMore">Ver política de cookies completa</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="locale-modal a11y-modal" id="cookiePolicyModal">
+    <div class="locale-dialog a11y-dialog" role="dialog" aria-modal="true" aria-labelledby="cookiePolicyTitle">
+      <div class="locale-dialog-head">
+        <h2 id="cookiePolicyTitle" data-i18n="cookiesPolicy.title">Política de Cookies</h2>
+        <button type="button" class="locale-close" id="cookiePolicyClose" aria-label="Fechar" data-i18n-aria="aria.close">&times;</button>
+      </div>
+      <div class="locale-dialog-body a11y-body">
+        <p class="a11y-intro" data-i18n="cookiesPolicy.intro">Cookies são pequenos ficheiros guardados no seu dispositivo. Este site usa também o localStorage do navegador, que funciona de forma semelhante: fica guardado no seu aparelho e não é enviado para nenhum servidor nosso.</p>
+
+        <h3 data-i18n="cookiesPolicy.necessaryTitle">Necessários (sempre ativos)</h3>
+        <ul class="a11y-list">
+          <li data-i18n="cookiesPolicy.n1">Idioma e região escolhidos, para não ter de os selecionar em cada visita.</li>
+          <li data-i18n="cookiesPolicy.n2">A sua decisão sobre cookies, para não lhe voltarmos a perguntar em cada página.</li>
+          <li data-i18n="cookiesPolicy.n3">Guardados apenas neste dispositivo; nunca identificam quem é nem são partilhados com terceiros.</li>
+        </ul>
+
+        <h3 data-i18n="cookiesPolicy.mapsTitle">Mapa (Google Maps)</h3>
+        <ul class="a11y-list">
+          <li data-i18n="cookiesPolicy.m1">Usado na secção "Localização" para mostrar o mapa do espaço.</li>
+          <li data-i18n="cookiesPolicy.m2">Só é carregado depois de autorizar esta categoria; até lá, vê apenas a morada em texto.</li>
+          <li data-i18n="cookiesPolicy.m3">Quando autorizado, o Google recebe o seu endereço IP e pode colocar cookies próprios, segundo a política de privacidade do Google.</li>
+        </ul>
+
+        <h3 data-i18n="cookiesPolicy.analyticsTitle">Analytics (Google Analytics)</h3>
+        <ul class="a11y-list">
+          <li data-i18n="cookiesPolicy.a1">Usado para perceber quantas pessoas visitam o site e que páginas veem, de forma agregada.</li>
+          <li data-i18n="cookiesPolicy.a2">Só corre depois de autorizar esta categoria. Se recusar depois de ter autorizado, os cookies _ga já colocados são apagados.</li>
+          <li data-i18n="cookiesPolicy.a3">Fornecido pela Google, segundo a política de privacidade da Google.</li>
+        </ul>
+
+        <h3 data-i18n="cookiesPolicy.durationTitle">Duração</h3>
+        <p data-i18n="cookiesPolicy.durationText">A sua escolha fica guardada neste dispositivo até a alterar ou até limpar os dados de navegação do browser.</p>
+
+        <h3 data-i18n="cookiesPolicy.changeTitle">Alterar a sua escolha</h3>
+        <p data-i18n="cookiesPolicy.changeText">Pode mudar de ideias a qualquer momento através do link "Cookies", no rodapé do site.</p>
+
+        <h3 data-i18n="a11y.contactTitle">Encontrou alguma barreira?</h3>
+        <p data-i18n="cookiesPolicy.contactText">Se tiver dúvidas sobre esta política, contacte-nos.</p>
+        <a href="https://wa.me/351919872094" class="action-btn action-btn-primary a11y-cta" target="_blank" rel="noopener" data-i18n="a11y.contactCta">Falar por WhatsApp</a>
+
+        <p class="a11y-updated" data-i18n="cookiesPolicy.updated">Última atualização: setembro de 2026.</p>
       </div>
     </div>
   </div>
